@@ -54,7 +54,7 @@ print r.recognize_bing(audio_data, key=str(creds['bing_api']), language = "en-US
 
 
 ##########################################
-import urllib2, urllib, json
+"""import urllib2, urllib, json
 baseurl = "https://query.yahooapis.com/v1/public/yql?"
 city_id = '2295402'
 yql_query = "select * from weather.forecast where woeid="+city_id
@@ -62,4 +62,27 @@ yql_url = baseurl + urllib.urlencode({'q':yql_query}) + "&format=json"
 result = urllib2.urlopen(yql_url).read()
 data = json.loads(result)
 print data['query']['results']['channel']['item']['condition']['text']
-print str((float(data['query']['results']['channel']['item']['forecast'][0]['high'])-32)/1.8)
+print str((float(data['query']['results']['channel']['item']['forecast'][0]['high'])-32)/1.8)"""
+##########################################
+"""def datetime_handler(x):
+    if isinstance(x, datetime.timedelta):
+        return x.isoformat()
+    raise TypeError("Unknown type")
+
+
+from tasks import tiger, my_task
+from tasktiger import Task
+import json
+import datetime
+from bson import json_util
+now = datetime.datetime.now()
+now_plus_10 = now + datetime.timedelta(seconds = 5)
+task = Task(tiger, my_task, (['ruchir']))
+print task.delay(when=datetime.timedelta(seconds = 5))"""
+##########################################
+from Modules.MotivationBot import bot
+print bot.lambda_function('who gives?')
+#from ActionsA import scheduler
+
+#scheduler.message(seconds=4, text='Nitesh is brilliant...')
+#scheduler.message(minutes=10, text='Nitesh is okayish!')

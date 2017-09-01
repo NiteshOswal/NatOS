@@ -57,7 +57,6 @@ def play_audio_file(fname=DETECT_DING):
     stream_out.close()
     audio.terminate()
 
-
 class HotwordDetector(object):
     """
     Snowboy decoder to detect whether a keyword specified by `decoder_model`
@@ -171,6 +170,7 @@ class HotwordDetector(object):
                                          time.localtime(time.time()))
                 logger.info(message)
                 # Calling mother call here, need better integration!!!!!
+                play_audio_file()
                 print 'calling mothership...'
                 mothership.mothercall()
                 callback = detected_callback[ans-1]
